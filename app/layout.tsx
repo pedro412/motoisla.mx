@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   description:
     "Equipo certificado, asesoría honesta y convenios para repartidores, flotillas y motociclistas en Ciudad del Carmen.",
   metadataBase: new URL("https://motoisla.mx"),
+  icons: {
+    icon: "/favicon.png",
+  },
   openGraph: {
     title: "Moto Isla | Equipo certificado y convenios en Ciudad del Carmen",
     description:
@@ -28,6 +31,14 @@ export const metadata: Metadata = {
     siteName: SITE_CONFIG.name,
     locale: "es_MX",
     type: "website",
+    images: [
+      {
+        url: "/logo.png",
+        width: 768,
+        height: 615,
+        alt: "Moto Isla logo",
+      },
+    ],
   },
 };
 

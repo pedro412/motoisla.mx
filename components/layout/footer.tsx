@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { NAV_ITEMS, SITE_CONFIG } from "@/lib/constants";
 
@@ -7,8 +8,14 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4 sm:px-6 lg:px-8">
         <div className="space-y-3">
           <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#E53935]/90 text-xl font-semibold text-white">
-              MI
+            <div className="relative h-14 w-14">
+              <Image
+                src="/logo.png"
+                alt={`${SITE_CONFIG.name} logo`}
+                fill
+                sizes="56px"
+                className="rounded-full object-cover"
+              />
             </div>
             <div className="leading-tight">
               <p className="font-[var(--font-oswald)] text-xl uppercase tracking-wide">

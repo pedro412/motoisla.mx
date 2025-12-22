@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/constants";
 
@@ -20,6 +21,7 @@ const features = [
 const dualPaths = [
   {
     title: "Para motociclistas",
+    image: "/images/forbikers.jpg",
     bullets: [
       "Cascos integrales, abatibles y abiertos",
       "Opciones económicas y premium",
@@ -30,6 +32,7 @@ const dualPaths = [
   },
   {
     title: "Para empresas e instituciones",
+    image: "/images/forcompany.jpg",
     bullets: [
       "Paquetes para repartidores",
       "Descuentos por volumen",
@@ -71,9 +74,20 @@ export default function Home() {
 
   return (
     <div className="grid-accent">
-      <div className="mx-auto flex max-w-6xl flex-col gap-16 px-4 pb-16 pt-12 sm:px-6 lg:px-8 lg:pt-16">
-        {/* Hero */}
-        <section className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+      {/* Hero full-width background */}
+      <section className="relative isolate overflow-hidden border-b border-white/5 bg-white/5">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero.jpg"
+            alt="Moto Isla tienda y equipamiento"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0B]/95 via-[#0B0B0B]/80 to-[#0B0B0B]/70" />
+        </div>
+        <div className="relative mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:px-8">
           <div className="space-y-6">
             <p className="inline-flex rounded-full bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#2DD4BF] ring-1 ring-white/10">
               Ciudad del Carmen
@@ -152,8 +166,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
+      <div className="mx-auto flex max-w-6xl flex-col gap-16 px-4 pb-16 pt-12 sm:px-6 lg:px-8 lg:pt-16">
         {/* Value props */}
         <section className="space-y-8">
           <div className="flex flex-col gap-2">
@@ -181,8 +197,20 @@ export default function Home() {
         {/* Dual path */}
         <section className="grid gap-6 lg:grid-cols-2">
           {dualPaths.map((path) => (
-            <div key={path.title} className="card p-6">
-              <div className="flex items-start justify-between gap-3">
+            <div
+              key={path.title}
+              className="card relative overflow-hidden p-6 bg-transparent"
+            >
+              <Image
+                src={path.image}
+                alt={path.title}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="absolute inset-0 z-0 object-cover"
+                priority
+              />
+              <div className="absolute inset-0 z-10 bg-gradient-to-br from-[#0B0B0B]/90 via-[#0B0B0B]/75 to-[#0B0B0B]/70" />
+              <div className="relative z-20 flex items-start justify-between gap-3">
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] text-[#9CA3AF]">
                     {path.title.includes("Empresas") ? "B2B" : "Bikers"}
@@ -191,9 +219,9 @@ export default function Home() {
                     {path.title}
                   </h3>
                 </div>
-                <div className="h-10 w-10 rounded-full bg-white/5" />
+                <div className="h-10 w-10 rounded-full bg-white/10" />
               </div>
-              <ul className="mt-4 space-y-2 text-sm text-[#D1D5DB]">
+              <ul className="relative z-20 mt-4 space-y-2 text-sm text-[#D1D5DB]">
                 {path.bullets.map((item) => (
                   <li key={item} className="flex items-start gap-2">
                     <span className="mt-1 h-2 w-2 rounded-full bg-[#2DD4BF]" />
@@ -203,7 +231,7 @@ export default function Home() {
               </ul>
               <Link
                 href={path.cta.href}
-                className="mt-5 inline-flex items-center text-sm font-semibold text-[#2DD4BF] transition hover:text-white"
+                className="relative z-20 mt-5 inline-flex items-center text-sm font-semibold text-[#2DD4BF] transition hover:text-white"
               >
                 {path.cta.label} →
               </Link>
