@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Moto Isla">
+  <defs>
+    <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop stop-color="#E53935" offset="0%"/>
+      <stop stop-color="#14B8A6" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="#0B0B0B"/>
+  <rect x="12" y="12" width="96" height="96" rx="20" fill="url(#g)" opacity="0.14"/>
+  <path d="M34 78V42h10.8l12 20.6L69 42h10v36h-8.9V58l-12 19.9h-2.2L43 58v20H34Z" fill="#fff"/>
+  <circle cx="84" cy="38" r="6" fill="#FACC15"/>
+</svg>
