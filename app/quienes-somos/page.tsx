@@ -32,7 +32,7 @@ export default function QuienesSomosPage() {
           </p>
           <div className="flex flex-wrap gap-3">
             <a
-              href="https://maps.google.com/?q=Calle+Francisco+Villa+6,+Ciudad+del+Carmen"
+              href={SITE_CONFIG.mapsUrl}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-[#E53935] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#C62828]"

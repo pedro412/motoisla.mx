@@ -1,20 +1,55 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/constants";
+import { LocationMap } from "@/components/maps/location-map";
+
+export const metadata: Metadata = {
+  title: "Cascos y accesorios para motociclistas en Ciudad del Carmen",
+  description:
+    "Venta de cascos certificados, guantes, intercomunicadores e impermeables en Ciudad del Carmen. Asesoría en tienda y promociones.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Cascos y accesorios para motociclistas en Ciudad del Carmen",
+    description:
+      "Venta de cascos certificados, guantes, intercomunicadores e impermeables en Ciudad del Carmen. Asesoría en tienda y promociones.",
+    images: ["/logo.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cascos y accesorios para motociclistas en Ciudad del Carmen",
+    description:
+      "Venta de cascos certificados, guantes, intercomunicadores e impermeables en Ciudad del Carmen. Asesoría en tienda y promociones.",
+    images: ["/logo.png"],
+  },
+  keywords: [
+    "cascos en Ciudad del Carmen",
+    "accesorios para motociclistas",
+    "cascos certificados",
+    "intercomunicadores",
+    "guantes para moto",
+    "impermeables para motociclistas",
+  ],
+};
 
 const features = [
   {
     title: "Equipo certificado",
     description: "Cascos y accesorios con certificaciones DOT y ECE 22.06.",
+    image: "/images/certificados.png",
   },
   {
     title: "Asesoría real",
     description: "Te ayudamos a elegir talla, tipo de casco y equipo correcto.",
+    image: "/images/asesoria.png",
   },
   {
     title: "Convenios empresariales",
     description:
       "Paquetes y precios especiales para repartidores, flotillas y compras institucionales.",
+    image: "/images/convenio.png",
   },
 ];
 
@@ -44,11 +79,11 @@ const dualPaths = [
 ];
 
 const products = [
-  "Cascos certificados",
-  "Intercomunicadores",
-  "Guantes",
-  "Impermeables",
-  "Botas (sobre pedido)",
+  { title: "Cascos certificados", image: "/images/cascos.jpg" },
+  { title: "Intercomunicadores", image: "/images/intercomunicadores.jpg" },
+  { title: "Guantes", image: "/images/guantes.jpg" },
+  { title: "Impermeables", image: "/images/impermeable.jpg" },
+  { title: "Botas (sobre pedido)", image: "/images/botas.jpg" },
 ];
 
 const promosPreview = [
@@ -65,15 +100,86 @@ const badges = [
 ];
 
 export default function Home() {
-  const whatsappGeneral = `${SITE_CONFIG.whatsapp.link}?text=${encodeURIComponent(
-    SITE_CONFIG.whatsapp.messages.general,
-  )}`;
-  const whatsappConvenios = `${SITE_CONFIG.whatsapp.link}?text=${encodeURIComponent(
-    SITE_CONFIG.whatsapp.messages.convenios,
-  )}`;
+  const whatsappGeneral = `${
+    SITE_CONFIG.whatsapp.link
+  }?text=${encodeURIComponent(SITE_CONFIG.whatsapp.messages.general)}`;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    name: SITE_CONFIG.name,
+    url: "https://motoisla.mx",
+    image: "https://motoisla.mx/logo.png",
+    telephone: SITE_CONFIG.whatsapp.number,
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Calle Francisco Villa 6",
+      addressLocality: SITE_CONFIG.city,
+      addressRegion: "Campeche",
+      addressCountry: "MX",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: SITE_CONFIG.geo.latitude,
+      longitude: SITE_CONFIG.geo.longitude,
+    },
+    areaServed: "Ciudad del Carmen, Campeche",
+    hasMap: SITE_CONFIG.mapsUrl,
+    sameAs: [SITE_CONFIG.social.facebook, SITE_CONFIG.social.instagram],
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+        ],
+        opens: "09:00",
+        closes: "19:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Saturday", "Sunday"],
+        opens: "09:00",
+        closes: "16:00",
+      },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Cascos y accesorios para motociclistas",
+      itemListElement: [
+        {
+          "@type": "OfferCatalog",
+          name: "Cascos certificados",
+        },
+        {
+          "@type": "OfferCatalog",
+          name: "Guantes para moto",
+        },
+        {
+          "@type": "OfferCatalog",
+          name: "Intercomunicadores",
+        },
+        {
+          "@type": "OfferCatalog",
+          name: "Impermeables",
+        },
+        {
+          "@type": "OfferCatalog",
+          name: "Botas",
+        },
+      ],
+    },
+  };
 
   return (
     <div className="grid-accent">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Hero full-width background */}
       <section className="relative isolate overflow-hidden border-b border-white/5 bg-white/5">
         <div className="absolute inset-0">
@@ -90,81 +196,40 @@ export default function Home() {
         <div className="relative mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:px-8">
           <div className="space-y-6">
             <p className="inline-flex rounded-full bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#2DD4BF] ring-1 ring-white/10">
-              Ciudad del Carmen
+              Cascos certificados • Asesoría en tienda
             </p>
             <h1 className="heading text-4xl font-bold leading-tight sm:text-5xl">
-              Equipo certificado para motociclistas y flotillas en Ciudad del
-              Carmen
+              Equípate para rodar seguro en Ciudad del Carmen
             </h1>
             <p className="max-w-2xl text-lg text-[#D1D5DB]">
-              Seguridad real, asesoría honesta y convenios para empresas,
-              repartidores e instituciones.
+              Cascos DOT/ECE 22.06, guantes, intercomunicadores e impermeables.
+              Te ayudamos a elegir talla y equipo ideal.
             </p>
             <div className="flex flex-wrap gap-3">
+              <a
+                href="/promos"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#E53935] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#E53935]/30 transition hover:bg-[#C62828]"
+              >
+                Ver promociones
+              </a>
               <a
                 href={whatsappGeneral}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#E53935] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#E53935]/30 transition hover:bg-[#C62828]"
-              >
-                Hablar por WhatsApp
-              </a>
-              <a
-                href={whatsappConvenios}
-                target="_blank"
-                rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-[#2DD4BF] px-6 py-3 text-sm font-semibold text-[#2DD4BF] transition hover:border-white hover:text-white"
               >
-                Solicitar convenio
+                Cotizar por WhatsApp
               </a>
             </div>
+            <Link
+              href="/convenios"
+              className="inline-flex items-center text-sm font-semibold text-[#9CA3AF] transition hover:text-white"
+            >
+              ¿Eres empresa? Ver convenios →
+            </Link>
             <p className="text-sm text-[#9CA3AF]">
               Visítanos: Calle Francisco Villa 6, a un costado del ADO.
             </p>
-          </div>
-          <div className="card relative overflow-hidden p-6">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#E53935]/10 via-transparent to-[#14B8A6]/10" />
-            <div className="relative space-y-4">
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-[#E5E7EB]">
-                <p className="font-semibold text-white">
-                  Tienda lista para equiparte
-                </p>
-                <p className="text-[#9CA3AF]">
-                  Cascos, intercomunicadores, guantes e impermeables con stock
-                  actualizado.
-                </p>
-              </div>
-              <div className="grid grid-cols-2 gap-3 text-sm text-[#E5E7EB]">
-                <div className="rounded-xl border border-white/10 bg-white/5 p-3">
-                  <p className="text-xs uppercase tracking-wide text-[#9CA3AF]">
-                    Empresas
-                  </p>
-                  <p className="font-semibold text-white">Convenios activos</p>
-                  <p className="text-xs text-[#9CA3AF]">Repartidores y flotillas</p>
-                </div>
-                <div className="rounded-xl border border-white/10 bg-white/5 p-3">
-                  <p className="text-xs uppercase tracking-wide text-[#9CA3AF]">
-                    Atención
-                  </p>
-                  <p className="font-semibold text-white">Asesoría 1:1</p>
-                  <p className="text-xs text-[#9CA3AF]">Te ayudamos a elegir</p>
-                </div>
-                <div className="rounded-xl border border-white/10 bg-white/5 p-3">
-                  <p className="text-xs uppercase tracking-wide text-[#9CA3AF]">
-                    Seguridad
-                  </p>
-                  <p className="font-semibold text-white">Certificación DOT/ECE</p>
-                  <p className="text-xs text-[#9CA3AF]">Recomendaciones claras</p>
-                </div>
-                <div className="rounded-xl border border-white/10 bg-white/5 p-3">
-                  <p className="text-xs uppercase tracking-wide text-[#9CA3AF]">
-                    Ubicación
-                  </p>
-                  <p className="font-semibold text-white">Calle Francisco Villa 6</p>
-                  <p className="text-xs text-[#9CA3AF]">A un costado del ADO</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -180,15 +245,44 @@ export default function Home() {
               Seguridad real y servicio cercano
             </h2>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            {features.map((feature) => (
-              <div key={feature.title} className="card p-5">
-                <h3 className="heading text-xl font-semibold text-white">
-                  {feature.title}
-                </h3>
-                <p className="mt-3 text-sm text-[#D1D5DB]">
-                  {feature.description}
-                </p>
+          <div className="grid gap-0 md:grid-cols-3">
+            {features.map((feature, idx) => (
+              <div
+                key={feature.title}
+                className="card relative flex min-h-[260px] flex-col items-center justify-center gap-3 rounded-none px-6 pb-4 pt-2 text-center shadow-none"
+                style={{
+                  boxShadow: "none",
+                  borderRadius: 0,
+                  backgroundColor: "transparent",
+                }}
+              >
+                {idx === 1 && (
+                  <>
+                    <span
+                      className="absolute inset-y-12 left-0 w-px bg-white/10"
+                      aria-hidden
+                    />
+                    <span
+                      className="absolute inset-y-12 right-0 w-px bg-white/10"
+                      aria-hidden
+                    />
+                  </>
+                )}
+                <div className="flex flex-col items-center gap-3">
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    width={200}
+                    height={200}
+                    className="h-48 w-48 rounded-md object-cover"
+                  />
+                  <h3 className="heading text-xl font-semibold text-white">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-[#D1D5DB]">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -251,11 +345,27 @@ export default function Home() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((product) => (
-              <div key={product} className="card flex flex-col justify-between p-5">
-                <div>
-                  <h3 className="heading text-xl font-semibold text-white">
-                    {product}
-                  </h3>
+              <div
+                key={product.title}
+                className="card relative overflow-hidden p-5"
+              >
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  fill
+                  sizes="(min-width: 1024px) 30vw, 50vw"
+                  className="absolute inset-0 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0B0B0B]/60 via-[#0B0B0B]/65 to-[#0B0B0B]/80" />
+                <div className="relative flex h-full flex-col justify-between">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-[#9CA3AF]">
+                      Producto
+                    </p>
+                    <h3 className="heading text-xl font-semibold text-white">
+                      {product.title}
+                    </h3>
+                  </div>
                   <p className="mt-2 text-sm text-[#D1D5DB]">
                     Consulta disponibilidad y promociones en tienda o por
                     WhatsApp.
@@ -300,7 +410,10 @@ export default function Home() {
           </div>
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
             {promosPreview.map((promo) => (
-              <div key={promo} className="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-[#E5E7EB]">
+              <div
+                key={promo}
+                className="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-[#E5E7EB]"
+              >
                 {promo}
               </div>
             ))}
@@ -333,10 +446,20 @@ export default function Home() {
         </section>
 
         {/* Location */}
-        <section className="card relative overflow-hidden p-8">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#E53935]/10 via-transparent to-[#14B8A6]/10" />
-          <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl space-y-3">
+      <section className="relative w-full overflow-hidden rounded-3xl border border-white/10">
+        <div className="absolute inset-0 z-0">
+          <LocationMap
+            lat={SITE_CONFIG.geo.latitude}
+            lng={SITE_CONFIG.geo.longitude}
+            offsetXPercent={-0.22}
+            className="h-full w-full"
+          />
+        </div>
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/80 via-black/55 to-black/40" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-br from-[#E53935]/15 via-transparent to-[#14B8A6]/15" />
+        <div className="relative z-20 flex min-h-[420px] items-center">
+          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl space-y-4">
               <p className="text-sm uppercase tracking-[0.2em] text-[#9CA3AF]">
                 Ubicación
               </p>
@@ -347,27 +470,28 @@ export default function Home() {
               <p className="text-sm text-[#D1D5DB]">
                 WhatsApp: {SITE_CONFIG.whatsapp.number}
               </p>
-            </div>
-            <div className="flex flex-col gap-3">
-              <a
-                href={whatsappGeneral}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-[#E53935] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#E53935]/30 transition hover:bg-[#C62828]"
-              >
-                Escríbenos por WhatsApp
-              </a>
-              <a
-                href="https://maps.google.com/?q=Calle+Francisco+Villa+6,+Ciudad+del+Carmen"
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm font-semibold text-[#2DD4BF] transition hover:text-white"
-              >
-                Ver en mapa →
-              </a>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <a
+                  href={whatsappGeneral}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center rounded-full bg-[#E53935] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#E53935]/30 transition hover:bg-[#C62828]"
+                >
+                  Escríbenos por WhatsApp
+                </a>
+                <a
+                  href={SITE_CONFIG.mapsUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm font-semibold text-[#2DD4BF] transition hover:text-white"
+                >
+                  Ver en mapa →
+                </a>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
       </div>
     </div>
   );

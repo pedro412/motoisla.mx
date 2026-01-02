@@ -17,17 +17,28 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "Moto Isla | Equipo certificado y convenios en Ciudad del Carmen",
+  title: {
+    default: "Moto Isla | Cascos y accesorios en Ciudad del Carmen",
+    template: "%s | Moto Isla",
+  },
   description:
-    "Equipo certificado, asesoría honesta y convenios para repartidores, flotillas y motociclistas en Ciudad del Carmen.",
+    "Cascos certificados, accesorios e indumentaria para motociclistas en Ciudad del Carmen. Asesoría en tienda, promociones y convenios.",
   metadataBase: new URL("https://motoisla.mx"),
   icons: {
     icon: "/favicon.png",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   openGraph: {
-    title: "Moto Isla | Equipo certificado y convenios en Ciudad del Carmen",
+    title: "Moto Isla | Cascos y accesorios en Ciudad del Carmen",
     description:
-      "Equipo certificado, asesoría honesta y convenios para repartidores, flotillas y motociclistas en Ciudad del Carmen.",
+      "Cascos certificados, accesorios e indumentaria para motociclistas en Ciudad del Carmen. Asesoría en tienda, promociones y convenios.",
     siteName: SITE_CONFIG.name,
     locale: "es_MX",
     type: "website",
@@ -39,6 +50,13 @@ export const metadata: Metadata = {
         alt: "Moto Isla logo",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Moto Isla | Cascos y accesorios en Ciudad del Carmen",
+    description:
+      "Cascos certificados, accesorios e indumentaria para motociclistas en Ciudad del Carmen. Asesoría en tienda, promociones y convenios.",
+    images: ["/logo.png"],
   },
 };
 
