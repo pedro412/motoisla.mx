@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Cascos certificados en Ciudad del Carmen",
     description:
       "Venta de cascos para motociclistas en Ciudad del Carmen: integrales, abatibles y abiertos con certificaciones DOT y ECE 22.06.",
-    images: ["/logo.png"],
+    images: ["/images/hero.jpg"],
   },
 };
 

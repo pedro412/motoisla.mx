@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     title: "Cascos y accesorios para motociclistas en Ciudad del Carmen",
     description:
       "Venta de cascos certificados, guantes, intercomunicadores e impermeables en Ciudad del Carmen. Asesoría en tienda y promociones.",
-    images: ["/logo.png"],
+    images: ["/images/hero.jpg"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Cascos y accesorios para motociclistas en Ciudad del Carmen",
     description:
       "Venta de cascos certificados, guantes, intercomunicadores e impermeables en Ciudad del Carmen. Asesoría en tienda y promociones.",
-    images: ["/logo.png"],
+    images: ["/images/hero.jpg"],
   },
   keywords: [
     "cascos en Ciudad del Carmen",

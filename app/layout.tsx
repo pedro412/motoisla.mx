@@ -44,10 +44,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo.png",
-        width: 768,
-        height: 615,
-        alt: "Moto Isla logo",
+        url: "/images/hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Moto Isla tienda y equipamiento",
       },
     ],
   },
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: "Moto Isla | Cascos y accesorios en Ciudad del Carmen",
     description:
       "Cascos certificados, accesorios e indumentaria para motociclistas en Ciudad del Carmen. Asesoría en tienda, promociones y convenios.",
-    images: ["/logo.png"],
+    images: ["/images/hero.jpg"],
   },
 };
 

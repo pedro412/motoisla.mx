@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Accesorios para motociclistas en Ciudad del Carmen",
     description:
       "Guantes, intercomunicadores, impermeables y botas para motociclistas en Ciudad del Carmen. Atención local y asesoría.",
-    images: ["/logo.png"],
+    images: ["/images/hero.jpg"],
   },
 };
 
