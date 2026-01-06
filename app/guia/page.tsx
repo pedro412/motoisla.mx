@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/constants";
 
@@ -82,11 +83,14 @@ export default function GuiaPage() {
             </p>
             {post.image && (
               <div className="mt-4 overflow-hidden rounded-xl border border-white/10">
-                <img
+                <Image
                   src={post.image}
                   alt={post.title}
+                  width={800}
+                  height={450}
                   className="h-44 w-full object-cover"
                   loading="lazy"
+                  sizes="(min-width: 768px) 50vw, 100vw"
                 />
               </div>
             )}

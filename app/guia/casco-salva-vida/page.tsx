@@ -53,6 +53,8 @@ export default function CascoSalvaVidaPage() {
           width={1200}
           height={630}
           priority
+          quality={75}
+          sizes="(min-width: 1024px) 960px, 100vw"
           className="h-auto w-full object-cover"
         />
       </div>
@@ -160,6 +162,8 @@ export default function CascoSalvaVidaPage() {
               height={900}
               className="h-auto w-full object-cover"
               loading="lazy"
+              quality={75}
+              sizes="(min-width: 1024px) 40vw, 100vw"
             />
           </div>
         </div>
