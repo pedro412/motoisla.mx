@@ -4,16 +4,44 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Guía del motociclista | Moto Isla",
-  description: "Tips directos para rodar más seguro y elegir mejor tu equipo.",
+  description:
+    "Consejos y artículos para rodar más seguro y elegir mejor tu equipo en Ciudad del Carmen.",
 };
 
 const posts = [
-  "Cómo elegir la talla correcta de tu casco",
-  "Cuándo cambiar tu casco",
-  "DOT vs ECE 22.06: lo que importa de verdad",
-  "Equipo esencial para repartidores (sin gastar de más)",
-  "Checklist para lluvia en Ciudad del Carmen",
-  "Cómo cuidar tu casco y mica",
+  {
+    title: "¿De verdad un casco puede salvarte la vida?",
+    href: "/guia/casco-salva-vida",
+    status: "Publicado",
+    description:
+      "Una conversación honesta entre motociclistas sobre riesgos reales y por qué el casco importa.",
+    image: "/images/articles/article-1-horizontal.jpg",
+    date: "5 de enero de 2026",
+  },
+  {
+    title: "Cómo elegir la talla correcta de tu casco",
+    status: "Próximamente",
+  },
+  {
+    title: "Cuándo cambiar tu casco",
+    status: "Próximamente",
+  },
+  {
+    title: "DOT vs ECE 22.06: lo que importa de verdad",
+    status: "Próximamente",
+  },
+  {
+    title: "Equipo esencial para repartidores (sin gastar de más)",
+    status: "Próximamente",
+  },
+  {
+    title: "Checklist para lluvia en Ciudad del Carmen",
+    status: "Próximamente",
+  },
+  {
+    title: "Cómo cuidar tu casco y mica",
+    status: "Próximamente",
+  },
 ];
 
 export default function GuiaPage() {
@@ -48,18 +76,43 @@ export default function GuiaPage() {
 
       <section className="grid gap-4 md:grid-cols-2">
         {posts.map((post) => (
-          <div key={post} className="card p-5">
-            <p className="text-xs uppercase tracking-[0.2em] text-[#9CA3AF]">Próximamente</p>
-            <h3 className="heading text-xl font-semibold text-white">{post}</h3>
-            <p className="mt-2 text-sm text-[#D1D5DB]">
-              Este artículo estará disponible pronto con recomendaciones específicas para {SITE_CONFIG.city}.
+          <div key={post.title} className="card p-5">
+            <p className="text-xs uppercase tracking-[0.2em] text-[#9CA3AF]">
+              {post.status}
             </p>
-            <button
-              type="button"
-              className="mt-3 inline-flex w-fit items-center rounded-full border border-white/10 px-4 py-2 text-xs font-semibold text-[#9CA3AF]"
-            >
-              Avísame cuando esté listo
-            </button>
+            {post.image && (
+              <div className="mt-4 overflow-hidden rounded-xl border border-white/10">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="h-44 w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            )}
+            <h3 className="mt-4 heading text-xl font-semibold text-white">{post.title}</h3>
+            <p className="mt-2 text-sm text-[#D1D5DB]">
+              {post.description ??
+                `Este artículo estará disponible pronto con recomendaciones específicas para ${SITE_CONFIG.city}.`}
+            </p>
+            {post.date && (
+              <p className="mt-3 text-xs text-[#9CA3AF]">Publicado: {post.date}</p>
+            )}
+            {post.href ? (
+              <Link
+                href={post.href}
+                className="mt-4 inline-flex w-fit items-center rounded-full border border-[#2DD4BF] px-4 py-2 text-xs font-semibold text-[#2DD4BF] transition hover:border-white hover:text-white"
+              >
+                Leer artículo
+              </Link>
+            ) : (
+              <button
+                type="button"
+                className="mt-4 inline-flex w-fit items-center rounded-full border border-white/10 px-4 py-2 text-xs font-semibold text-[#9CA3AF]"
+              >
+                Avísame cuando esté listo
+              </button>
+            )}
           </div>
         ))}
       </section>

@@ -29,6 +29,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
+      url: `${baseUrl}/guia/casco-salva-vida`,
+      lastModified: new Date(),
+    },
+    {
       url: `${baseUrl}/quienes-somos`,
       lastModified: new Date(),
     },
