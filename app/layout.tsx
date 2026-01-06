@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { WhatsAppFloat } from "@/components/layout/whatsapp-float";
 import { SITE_CONFIG } from "@/lib/constants";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -75,6 +76,7 @@ export default function RootLayout({
           <main className="pb-24">{children}</main>
           <Footer />
           <WhatsAppFloat />
+          <Analytics />
         </div>
       </body>
     </html>
