@@ -14,14 +14,21 @@ export const metadata: Metadata = {
     title: "¿De verdad un casco puede salvarte la vida?",
     description:
       "Una conversación honesta entre motociclistas sobre riesgos reales y por qué un casco certificado puede marcar la diferencia.",
-    images: ["/images/articles/article-1-horizontal.jpg"],
+    images: [
+      {
+        url: "https://motoisla.mx/images/articles/article-1-horizontal.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Motociclista con casco en ruta",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "¿De verdad un casco puede salvarte la vida?",
     description:
       "Una conversación honesta entre motociclistas sobre riesgos reales y por qué un casco certificado puede marcar la diferencia.",
-    images: ["/images/articles/article-1-horizontal.jpg"],
+    images: ["https://motoisla.mx/images/articles/article-1-horizontal.jpg"],
   },
 };
 
