@@ -14,6 +14,8 @@ export const metadata: Metadata = {
     title: "¿De verdad un casco puede salvarte la vida?",
     description:
       "Una conversación honesta entre motociclistas sobre riesgos reales y por qué un casco certificado puede marcar la diferencia.",
+    url: "https://motoisla.mx/guia/casco-salva-vida",
+    type: "article",
     images: [
       {
         url: "https://motoisla.mx/images/articles/article-1-horizontal.jpg",
