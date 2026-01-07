@@ -25,7 +25,7 @@ const posts = [
     status: "Publicado",
     description:
       "Por qué hay más motos, cómo cambia la movilidad y qué debemos hacer para convivir mejor en la calle.",
-    image: "/images/articles/article-2-vertical.jpg",
+    image: "/images/articles/article-2.jpg",
     date: "7 de enero de 2026",
   },
   {

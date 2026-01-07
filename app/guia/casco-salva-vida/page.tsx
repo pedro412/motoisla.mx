@@ -165,7 +165,7 @@ export default function CascoSalvaVidaPage() {
           </div>
           <div className="overflow-hidden rounded-2xl border border-white/10">
             <Image
-              src="/images/articles/article-2-vertical.jpg"
+              src="/images/articles/article-2.jpg"
               alt="Detalle de casco de motociclista"
               width={680}
               height={900}
