@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://motoisla.mx/images/articles/article-2-vertical.jpg",
+        url: "https://motoisla.mx/images/articles/article-2.jpg",
         width: 1200,
-        height: 1600,
+        height: 630,
         alt: "Motociclista en ciudad",
       },
     ],
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       "La moto no es el problema: por qué su uso crece y por qué necesitamos aprender a convivir mejor",
     description:
       "Por qué hay más motos, cómo cambia la movilidad y qué debemos hacer para convivir mejor entre autos y motociclistas.",
-    images: ["https://motoisla.mx/images/articles/article-2-vertical.jpg"],
+    images: ["https://motoisla.mx/images/articles/article-2.jpg"],
   },
 };
 
@@ -56,10 +56,10 @@ export default function MotoNoEsProblemaPage() {
 
       <div className="overflow-hidden rounded-3xl border border-white/10">
         <Image
-          src="/images/articles/article-2-vertical.jpg"
+          src="/images/articles/article-2.jpg"
           alt="Motociclista en ciudad"
           width={1200}
-          height={1600}
+          height={630}
           priority
           quality={75}
           sizes="(min-width: 1024px) 720px, 100vw"
