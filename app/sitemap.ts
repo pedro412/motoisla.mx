@@ -33,6 +33,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
+      url: `${baseUrl}/guia/moto-no-es-problema`,
+      lastModified: new Date(),
+    },
+    {
       url: `${baseUrl}/quienes-somos`,
       lastModified: new Date(),
     },

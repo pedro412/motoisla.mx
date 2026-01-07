@@ -20,6 +20,15 @@ const posts = [
     date: "5 de enero de 2026",
   },
   {
+    title: "La moto no es el problema: por qué su uso crece y por qué necesitamos aprender a convivir mejor",
+    href: "/guia/moto-no-es-problema",
+    status: "Publicado",
+    description:
+      "Por qué hay más motos, cómo cambia la movilidad y qué debemos hacer para convivir mejor en la calle.",
+    image: "/images/articles/article-2-vertical.jpg",
+    date: "7 de enero de 2026",
+  },
+  {
     title: "Cómo elegir la talla correcta de tu casco",
     status: "Próximamente",
   },
