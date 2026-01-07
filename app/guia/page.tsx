@@ -18,6 +18,7 @@ const posts = [
       "Una conversación honesta entre motociclistas sobre riesgos reales y por qué el casco importa.",
     image: "/images/articles/article-1-horizontal.jpg",
     date: "5 de enero de 2026",
+    dateISO: "2026-01-05",
   },
   {
     title: "La moto no es el problema: por qué su uso crece y por qué necesitamos aprender a convivir mejor",
@@ -27,6 +28,7 @@ const posts = [
       "Por qué hay más motos, cómo cambia la movilidad y qué debemos hacer para convivir mejor en la calle.",
     image: "/images/articles/article-2.jpg",
     date: "7 de enero de 2026",
+    dateISO: "2026-01-07",
   },
   {
     title: "Cómo elegir la talla correcta de tu casco",
@@ -53,6 +55,15 @@ const posts = [
     status: "Próximamente",
   },
 ];
+
+const sortedPosts = [...posts].sort((a, b) => {
+  if (a.dateISO && b.dateISO) {
+    return new Date(b.dateISO).getTime() - new Date(a.dateISO).getTime();
+  }
+  if (a.dateISO) return -1;
+  if (b.dateISO) return 1;
+  return 0;
+});
 
 export default function GuiaPage() {
   const whatsappLink = `${SITE_CONFIG.whatsapp.link}?text=${encodeURIComponent(
@@ -85,7 +96,7 @@ export default function GuiaPage() {
       </section>
 
       <section className="grid gap-4 md:grid-cols-2">
-        {posts.map((post) => (
+        {sortedPosts.map((post) => (
           <div key={post.title} className="card p-5">
             <p className="text-xs uppercase tracking-[0.2em] text-[#9CA3AF]">
               {post.status}
