@@ -37,6 +37,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
+      url: `${baseUrl}/guia/ciudad-del-carmen-paraiso-inversionistas`,
+      lastModified: new Date(),
+    },
+    {
       url: `${baseUrl}/quienes-somos`,
       lastModified: new Date(),
     },

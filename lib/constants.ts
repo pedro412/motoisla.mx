@@ -35,11 +35,8 @@ export const SITE_CONFIG = {
 
 export const NAV_ITEMS = [
   { label: "Inicio", href: "/" },
-  { label: "Cascos", href: "/cascos" },
-  { label: "Accesorios", href: "/accesorios" },
   { label: "Convenios", href: "/convenios" },
-  { label: "Promos", href: "/promos" },
-  { label: "Guía", href: "/guia" },
+  { label: "Revista", href: "/guia" },
   { label: "Quiénes somos", href: "/quienes-somos" },
   { label: "Contacto", href: "/contacto" },
 ];

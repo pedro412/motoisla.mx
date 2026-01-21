@@ -4,9 +4,9 @@ import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Guía del motociclista | Moto Isla",
+  title: "Revista Moto Isla",
   description:
-    "Consejos y artículos para rodar más seguro y elegir mejor tu equipo en Ciudad del Carmen.",
+    "Noticias, ensayos y artículos sobre motociclismo y movilidad en Ciudad del Carmen.",
 };
 
 const posts = [
@@ -29,6 +29,16 @@ const posts = [
     image: "/images/articles/article-2.jpg",
     date: "7 de enero de 2026",
     dateISO: "2026-01-07",
+  },
+  {
+    title: "Ciudad del Carmen: el paraíso para inversionistas con visión",
+    href: "/guia/ciudad-del-carmen-paraiso-inversionistas",
+    status: "Publicado",
+    description:
+      "Carmen se reinventa con industrias de nicho, turismo de experiencia y motociclismo como motor.",
+    image: "/images/articles/article-3.jpg",
+    date: "10 de enero de 2026",
+    dateISO: "2026-01-10",
   },
   {
     title: "Cómo elegir la talla correcta de tu casco",
@@ -73,9 +83,9 @@ export default function GuiaPage() {
   return (
     <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 pb-20 pt-12 sm:px-6 lg:px-8">
       <section className="space-y-6">
-        <h1 className="heading text-4xl font-bold">Guía del motociclista</h1>
+        <h1 className="heading text-4xl font-bold">Revista Moto Isla</h1>
         <p className="text-lg text-[#D1D5DB]">
-          Tips directos para rodar más seguro y elegir mejor tu equipo.
+          Noticias, ensayos y artículos sobre motociclismo y movilidad.
         </p>
         <div className="flex gap-3">
           <a

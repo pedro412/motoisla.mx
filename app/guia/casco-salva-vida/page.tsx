@@ -43,9 +43,9 @@ export default function CascoSalvaVidaPage() {
     <div className="mx-auto flex max-w-5xl flex-col gap-10 px-4 pb-20 pt-12 sm:px-6 lg:px-8">
       <header className="space-y-4">
         <Link href="/guia" className="text-sm font-semibold text-[#2DD4BF] transition hover:text-white">
-          ← Volver a la guía
+          ← Volver a la revista
         </Link>
-        <p className="text-xs uppercase tracking-[0.2em] text-[#9CA3AF]">Guía del motociclista</p>
+        <p className="text-xs uppercase tracking-[0.2em] text-[#9CA3AF]">Revista Moto Isla</p>
         <h1 className="heading text-4xl font-bold">
           ¿De verdad un casco puede salvarte la vida?
         </h1>
