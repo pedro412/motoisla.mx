@@ -16,7 +16,7 @@ const posts = [
     status: "Publicado",
     description:
       "Qué está cambiando en Carmen, por qué el valor migró a la confianza y cómo impacta al motociclismo local.",
-    image: "/images/articles/article-4.jpg",
+    image: "/images/articles/article-4-small.jpg",
     date: "15 de enero de 2026",
     dateISO: "2026-01-15",
   },
