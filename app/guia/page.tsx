@@ -11,6 +11,16 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: "El cambio de paradigma en Ciudad del Carmen y lo que significa para el motociclismo",
+    href: "/guia/el-cambio-de-paradigma-en-ciudad-del-carmen",
+    status: "Publicado",
+    description:
+      "Qué está cambiando en Carmen, por qué el valor migró a la confianza y cómo impacta al motociclismo local.",
+    image: "/images/articles/article-4.jpg",
+    date: "15 de enero de 2026",
+    dateISO: "2026-01-15",
+  },
+  {
     title: "¿De verdad un casco puede salvarte la vida?",
     href: "/guia/casco-salva-vida",
     status: "Publicado",
