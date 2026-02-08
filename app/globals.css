@@ -30,6 +30,58 @@ body {
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
 }
 
+.guide-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.25rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(10px);
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.guide-card::before {
+  content: "";
+  position: absolute;
+  inset: -45% -15% auto auto;
+  width: 240px;
+  height: 240px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.2), rgba(45, 212, 191, 0));
+  pointer-events: none;
+}
+
+.guide-card:hover {
+  border-color: rgba(45, 212, 191, 0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 26px 55px rgba(0, 0, 0, 0.42);
+}
+
+.guide-media {
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.45);
+}
+
+.guide-media img {
+  transition: transform 280ms ease;
+}
+
+.guide-card:hover .guide-media img {
+  transform: scale(1.04);
+}
+
+.guide-media-empty {
+  display: grid;
+  place-items: center;
+  height: 14rem;
+  border-radius: 1rem;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.01));
+}
+
 .grid-accent {
   background: radial-gradient(circle at 20% 20%, rgba(229, 57, 53, 0.08), transparent 30%),
     radial-gradient(circle at 80% 0%, rgba(20, 184, 166, 0.1), transparent 35%),
