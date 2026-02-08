@@ -7,7 +7,7 @@ const ARTICLE_TITLE = "El cambio de paradigma en Ciudad del Carmen y lo que sign
 const ARTICLE_DESCRIPTION =
   "Por qué el valor se mueve de lo físico a la confianza, la comunidad y el contenido en el motociclismo local.";
 const ARTICLE_PATH = "/guia/el-cambio-de-paradigma-en-ciudad-del-carmen";
-const ARTICLE_IMAGE = "https://motoisla.mx/images/articles/article-4.jpg";
+const ARTICLE_IMAGE = "https://motoisla.mx/images/articles/article-4-small.jpg";
 
 export const metadata: Metadata = {
   title: ARTICLE_TITLE,
@@ -51,7 +51,7 @@ export default function CambioParadigmaCarmenPage() {
 
       <div className="overflow-hidden rounded-3xl border border-white/10">
         <Image
-          src="/images/articles/article-4.jpg"
+          src="/images/articles/article-4-small.jpg"
           alt="Interior de tienda de motocicletas en Ciudad del Carmen"
           width={1200}
           height={630}
