@@ -11,6 +11,16 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: "Convivencia vial en Ciudad del Carmen: motos y autos, responsabilidad compartida",
+    href: "/guia/convivencia-vial-ciudad-del-carmen-motos-autos",
+    status: "Publicado",
+    description:
+      "Reflexion sobre responsabilidad compartida entre autos y motos, habitos que salvan vidas y uso de cascos certificados.",
+    image: "/images/articles/article-5.jpg",
+    date: "22 de febrero de 2026",
+    dateISO: "2026-02-22",
+  },
+  {
     title: "El cambio de paradigma en Ciudad del Carmen y lo que significa para el motociclismo",
     href: "/guia/el-cambio-de-paradigma-en-ciudad-del-carmen",
     status: "Publicado",
