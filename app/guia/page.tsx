@@ -11,6 +11,16 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: "Moto Isla Podcast: historias reales de la comunidad biker en Ciudad del Carmen",
+    href: "/guia/moto-isla-podcast-comunidad-biker-ciudad-del-carmen",
+    status: "Publicado",
+    description:
+      "Entrevistas, viajes, eventos y proyectos que documentan la cultura biker local desde Moto Isla.",
+    image: "/images/articles/article-6.jpg",
+    date: "3 de marzo de 2026",
+    dateISO: "2026-03-03",
+  },
+  {
     title: "Convivencia vial en Ciudad del Carmen: motos y autos, responsabilidad compartida",
     href: "/guia/convivencia-vial-ciudad-del-carmen-motos-autos",
     status: "Publicado",
